@@ -1,0 +1,91 @@
+﻿<Window x:Class="NumberSorterApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumberSorterApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--<Window.Resources>
+        <ControlTemplate x:Key="dataGrid" TargetType="ContentControl">
+            <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="{DynamicResource ResourceKey= Column}">
+                <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding text}"/>
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <TextBlock Background="#ffffff" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" Height="80" Width="100"
+                           TextWrapping="Wrap" TextAlignment="Center">
+                    Welcome
+                    </TextBlock>
+                </Border>
+                <TextBlock HorizontalAlignment="Center" Margin="5">ms</TextBlock>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="4">
+            <TextBox  Name="inputNumber"  Width="400" Height="30" Margin="20" HorizontalAlignment="Left"/>
+            <Button Name="sortButton" Width="100" Height="30"  Content="Sort" Margin="20" HorizontalAlignment="Right" Click="sortButton_Click"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
+                <TextBlock HorizontalAlignment="Center" Margin="5">Quick Sort</TextBlock>
+            <Border BorderThickness="1" BorderBrush="Black">
+                <ListBox Height="80" Width="100" Name="quickSortResult" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <ListBox.BindingGroup>
+                        <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+                    </ListBox.BindingGroup>
+                </ListBox>
+            </Border>
+            <TextBlock HorizontalAlignment="Center" Margin="5" x:Name="quickSortTime"></TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="Bubble Sort"/>
+            <Border BorderThickness="1" BorderBrush="Black">
+                <ListBox Height="80" Width="100" Name="bubbleSortResult" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <ListBox.BindingGroup>
+                        <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+                    </ListBox.BindingGroup>
+                </ListBox>
+            </Border>
+            <TextBlock HorizontalAlignment="Center" Margin="5" x:Name="bubbleSortTime"></TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="Merge Sort"/>
+            <Border BorderThickness="1" BorderBrush="Black">
+                <ListBox Height="80" Width="100" Name="mergerSortResult" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <ListBox.BindingGroup>
+                        <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+                    </ListBox.BindingGroup>
+                </ListBox>
+            </Border>
+            <TextBlock HorizontalAlignment="Center" Margin="5" x:Name="mergerSortTime"></TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3">
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="GCF Sort"/>
+            <Border BorderThickness="1" BorderBrush="Black">
+                <ListBox Height="80" Width="100" Name="gcfSortResult" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <ListBox.BindingGroup>
+                        <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+                    </ListBox.BindingGroup>
+                </ListBox>
+            </Border>
+            <TextBlock HorizontalAlignment="Center" Margin="5" x:Name="GcfSortTime"></TextBlock>
+        </StackPanel>
+
+        <!--<ContentControl Content="Enter your name:" x:Name="NameControl"
+           Template="{StaticResource dataGrid}"  />-->
+        <Grid>
+        <Label Grid.Row="1" Name="MyLabel" Margin="5"/>
+        </Grid>
+    </Grid>
+</Window>

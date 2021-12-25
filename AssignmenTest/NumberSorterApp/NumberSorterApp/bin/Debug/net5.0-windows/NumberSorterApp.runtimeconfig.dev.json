@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\saidi\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\saidi\\.nuget\\packages"
+    ]
+  }
+}
